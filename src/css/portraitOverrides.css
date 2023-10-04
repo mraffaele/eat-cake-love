@@ -1,0 +1,38 @@
+@media screen and (orientation: portrait) {
+  .page {
+    flex-direction: column;
+  }
+
+  .header {
+    height: 30%;
+    width: 100%;
+  }
+
+  .logo {
+    aspect-ratio: 1/1;
+    height: calc(100% - 50px);
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  .cakes {
+    height: calc(70% - 40px);
+    width: 100%;
+  }
+
+  .pips {
+    width: auto;
+    height: 100%;
+    right: 10px;
+    top: 0;
+    flex-direction: column;
+  }
+
+  .footer {
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+}

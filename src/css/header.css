@@ -1,0 +1,27 @@
+.header {
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.contact-link:hover {
+  opacity: 0.5;
+}
+
+.logo {
+  aspect-ratio: 1/1;
+  height: auto;
+  max-width: 400px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}

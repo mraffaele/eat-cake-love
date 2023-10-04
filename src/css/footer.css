@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+
+  text-transform: uppercase;
+  height: 40px;
+}
