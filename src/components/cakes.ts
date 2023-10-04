@@ -3,6 +3,7 @@ let cakes: NodeListOf<Element>;
 let pips: NodeListOf<Element>;
 let currentSlideIndex = 0;
 let previousSlideIndex: number;
+let timeout: NodeJS.Timeout;
 
 const getNextSlideIndex = (): number => {
   const maxSlides = cakes.length;
@@ -16,31 +17,26 @@ const getNextSlideIndex = (): number => {
 const doNextSlide = (): void => {
   let nextSlideIndex = getNextSlideIndex();
   changeSlide(nextSlideIndex);
-  changePips(nextSlideIndex);
-  previousSlideIndex = currentSlideIndex;
-  currentSlideIndex = nextSlideIndex;
-  wait();
 };
 
 const preloadSlide = (index: number): void => {
   const img = new Image();
   const imgSrc = cakes[index].getAttribute("src") as string;
   img.setAttribute("src", imgSrc);
-  console.log(img);
 };
 
 const changeSlide = (
   nextIndex: number,
   currentIndex: number = currentSlideIndex
 ): void => {
-  const previousSlideClassName = "cake--previous";
   const currentSlideClassName = "cake--active";
-  if (previousSlideIndex !== undefined) {
-    cakes[previousSlideIndex].classList.remove(previousSlideClassName);
-  }
   cakes[currentIndex].classList.remove(currentSlideClassName);
-  cakes[currentIndex].classList.add(previousSlideClassName);
   cakes[nextIndex].classList.add(currentSlideClassName);
+
+  changePips(nextIndex);
+  previousSlideIndex = currentSlideIndex;
+  currentSlideIndex = nextIndex;
+  wait();
 };
 
 const changePips = (
@@ -58,7 +54,7 @@ const nextSlide = (): void => {
 
 const wait = (): void => {
   preloadSlide(getNextSlideIndex());
-  setTimeout(nextSlide, slidePauseTime);
+  timeout = setTimeout(nextSlide, slidePauseTime);
 };
 
 const createPips = (): void => {
@@ -73,6 +69,10 @@ const createPips = (): void => {
     if (i === 0) {
       clone.classList.add("pip--active");
     }
+    clone.addEventListener("click", () => {
+      clearTimeout(timeout);
+      changeSlide(i);
+    });
     container.appendChild(clone);
   }
 

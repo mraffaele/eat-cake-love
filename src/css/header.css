@@ -5,16 +5,30 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  overflow: hidden;
 }
 
 .contact {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 10px;
+}
+
+.contact-link {
   display: flex;
   align-items: center;
-  gap: 30px;
+  text-decoration: none;
 }
 
 .contact-link:hover {
   opacity: 0.5;
+}
+
+.contact-link span {
+  padding-left: 10px;
+  color: black;
 }
 
 .logo {
@@ -24,4 +38,14 @@
   width: 100%;
   object-fit: contain;
   margin-bottom: 20px;
+}
+
+@media screen and (max-device-width: 950px) and (orientation: landscape) {
+  .logo {
+    max-width: 200px;
+  }
+
+  .contact {
+    margin-bottom: 20px;
+  }
 }

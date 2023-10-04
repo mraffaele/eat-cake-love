@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
+    filename: "[name].[hash].js",
     clean: true,
     assetModuleFilename: (pathData) => {
       const filepath = path
@@ -70,7 +70,7 @@ module.exports = {
       title: "My App",
       template: "src/index.html",
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ filename: "[name].[hash].css" }),
     new CssMinimizerPlugin(),
   ],
 };

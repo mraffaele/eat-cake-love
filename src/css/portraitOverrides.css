@@ -4,21 +4,19 @@
   }
 
   .header {
-    height: 30%;
+    height: 40%;
     width: 100%;
   }
 
   .logo {
-    aspect-ratio: 1/1;
-    height: calc(100% - 50px);
-    max-height: 400px;
+    height: calc(100% - 70px);
+    max-height: 300px;
     width: auto;
-    object-fit: contain;
     margin-bottom: 10px;
   }
 
   .cakes {
-    height: calc(70% - 40px);
+    height: calc(60% - 40px);
     width: 100%;
   }
 
