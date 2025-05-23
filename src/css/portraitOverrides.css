@@ -1,16 +1,15 @@
 @media screen and (orientation: portrait) {
-  .page {
+  /* .page {
     flex-direction: column;
   }
 
   .header {
-    height: 40%;
+    flex: 1 1 50%;
     width: 100%;
   }
 
   .logo {
-    height: calc(100% - 70px);
-    max-height: 300px;
+    max-height: 200px;
     width: auto;
     margin-bottom: 10px;
   }
@@ -29,8 +28,65 @@
   }
 
   .footer {
+    opacity: 0;
     left: 0;
     transform: none;
     width: 100%;
+  }
+
+  .pips {
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    top: unset;
+    width: 100%;
+  } */
+
+  .page {
+    display: block;
+  }
+
+  .header {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    left: 3rem;
+    width: calc(100% - 6rem);
+  }
+  .cakes {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .contact {
+    align-items: center;
+  }
+  .contact-link {
+    font-size: 0.85rem;
+    img {
+      display: none;
+    }
+  }
+  .pips {
+    display: none;
+  }
+
+  .footer {
+    color: #fff;
+    text-shadow: 1px 1px 1px black;
+    left: 0;
+    width: 100%;
+    transform: unset;
+    span {
+      display: none;
+    }
   }
 }

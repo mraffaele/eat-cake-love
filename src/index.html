@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,10 +37,25 @@
       rel="manifest"
       href="https://eatcakelove.melbourne/assets/static/manifest.json"
     />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LVF5TMTGDQ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-LVF5TMTGDQ");
+    </script>
   </head>
   <body>
     <div class="page">
       <header class="header">
+        <h1 class="title">Maker, Baker, Cake Decorator</h1>
         <img
           class="logo"
           src="./assets/logo-trimmed.svg"
@@ -81,8 +96,14 @@
       <section class="cakes">
         <img
           class="cake cake--active"
-          src="./assets/001.jpg"
+          src="./assets/000.jpg"
           loading="eager"
+          alt="Cake image"
+        />
+        <img
+          class="cake"
+          src="./assets/001.jpg"
+          loading="lazy"
           alt="Cake image"
         />
         <img
@@ -103,10 +124,18 @@
           loading="lazy"
           alt="Cake image"
         />
+        <img
+          class="cake"
+          src="./assets/005.jpg"
+          loading="lazy"
+          alt="Cake image"
+        />
         <ol class="pips"></ol>
       </section>
 
-      <footer class="footer">Made with ♥️ in Melbourne</footer>
+      <footer class="footer">
+        Made with ♥️ in Melbourne<span>'s Inner West</span>
+      </footer>
     </div>
   </body>
 </html>
